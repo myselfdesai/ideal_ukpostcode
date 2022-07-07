@@ -2,7 +2,7 @@
 
 __author__ = """AMAR DESAI"""
 __email__ = 'amardesai.bgm@gmail.com'
-__version__ = '0.0.4'
+__version__ = '0.0.5'
 
 
 from ideal_ukpostcode.pc_validate import validate
