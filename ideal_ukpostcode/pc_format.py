@@ -34,25 +34,17 @@ def validate_unitcode(unit):
     
 def format(area, district, sector, unit):
     
-    try:
-        validate_areacode(area)
-    except:
-        print("Invalid Area Code")
+    if not validate_areacode(str(area)):
+        raise Exception("Invalid Area Code")
 
-    try:
-        validate_districtcode(district)
-    except:
-        print("Invalid District Code")
+    if not validate_districtcode(str(district)):
+        raise Exception("Invalid District Code")
     
-    try:
-        validate_sectorcode(str(sector))
-    except:
-        print("Invalid Sector Code")
+    if not validate_sectorcode(str(sector)):
+        raise Exception("Invalid Sector Code")
     
-    try:
-        validate_unitcode(unit)
-    except:
-        print("Invalid Unit Code")
+    if not validate_unitcode(str(unit)):
+        raise Exception("Invalid Unit Code")
 
     outward_code = area + district
     inward_code = str(sector) + unit
