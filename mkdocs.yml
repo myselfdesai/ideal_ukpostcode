@@ -48,5 +48,5 @@ nav:
     - FAQ: faq.md
     - Changelog: changelog.md
     - Report Issues: https://github.com/myselfdesai/ideal_ukpostcode/issues
-    - API Reference:
-          - ideal_ukpostcode module: ideal_ukpostcode.md
+    # - API Reference:
+    #       - ideal_ukpostcode module: ideal_ukpostcode.md
