@@ -5,7 +5,7 @@
 
 import unittest
 
-from ideal_ukpostcode import ideal_ukpostcode
+from ideal_ukpostcode import pc_validate
 
 
 class TestIdeal_ukpostcode(unittest.TestCase):
