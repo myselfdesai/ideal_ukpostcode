@@ -6,3 +6,4 @@ __version__ = '0.0.3'
 
 
 from ideal_ukpostcode.pc_validate import validate
+from ideal_ukpostcode.pc_format import format
