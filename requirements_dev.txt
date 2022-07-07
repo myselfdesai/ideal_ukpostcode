@@ -9,3 +9,5 @@ Sphinx
 twine
 grip
 
+pytest
+pytest-runner
