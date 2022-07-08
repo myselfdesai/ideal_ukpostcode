@@ -52,6 +52,6 @@ setup(
     test_suite='tests',
     tests_require=test_requirements,
     url='https://github.com/myselfdesai/ideal_ukpostcode',
-    version='version='0.0.5'',
+    version='version='0.0.6'',
     zip_safe=False,
 )
