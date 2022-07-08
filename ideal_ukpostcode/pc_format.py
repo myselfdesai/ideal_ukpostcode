@@ -1,6 +1,7 @@
 import re
 
-from ideal_ukpostcode.exceptions import *
+from ideal_ukpostcode.exceptions import InvalidArea, InvalidDistrict, InvalidSector, InvalidUnit
+
 
 def validate_areacode(area):
     # Validate a uk postcode area
@@ -10,6 +11,7 @@ def validate_areacode(area):
     result = bool(re.match("[A-Z]{1,2}$", area))
     return result
 
+
 def validate_districtcode(district):
     # Validate a uk postcode district
     # input = The postcode district is one digit, two digits or a digit followed by a letter.
@@ -18,13 +20,15 @@ def validate_districtcode(district):
     result = bool(re.match("[0-9][A-Z0-9]?|ASCN|STHL|TDCU|BBND|[BFS]IQQ|PCRN|TKCA", district))
     return result
 
+
 def validate_sectorcode(sector):
     # Validate a uk postcode sector
     # input = The postcode sector is made up of a single digit
     # return = A boolean result with whether the postcode sector is valid or not
 
-    result = bool(re.match("\d$", sector))
+    result = bool(re.match(r"\d$", sector))
     return result
+
 
 def validate_unitcode(unit):
     # Validate a uk postcode unit
@@ -33,18 +37,16 @@ def validate_unitcode(unit):
 
     result = bool(re.match("[A-Z]{2}$", unit))
     return result
-    
+
+
 def format(area, district, sector, unit):
-    
+
     if not validate_areacode(str(area)):
         raise InvalidArea
-
     if not validate_districtcode(str(district)):
         raise InvalidDistrict
-    
     if not validate_sectorcode(str(sector)):
         raise InvalidSector
-    
     if not validate_unitcode(str(unit)):
         raise InvalidUnit
 
