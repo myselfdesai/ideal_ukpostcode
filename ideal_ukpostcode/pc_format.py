@@ -1,5 +1,7 @@
 import re
 
+from ideal_ukpostcode.exceptions import *
+
 def validate_areacode(area):
     # Validate a uk postcode area
     # input = The postcode area is either one or two characters long and is alphabetical.
@@ -35,16 +37,16 @@ def validate_unitcode(unit):
 def format(area, district, sector, unit):
     
     if not validate_areacode(str(area)):
-        raise Exception("Invalid Area Code")
+        raise InvalidArea
 
     if not validate_districtcode(str(district)):
-        raise Exception("Invalid District Code")
+        raise InvalidDistrict
     
     if not validate_sectorcode(str(sector)):
-        raise Exception("Invalid Sector Code")
+        raise InvalidSector
     
     if not validate_unitcode(str(unit)):
-        raise Exception("Invalid Unit Code")
+        raise InvalidUnit
 
     outward_code = area + district
     inward_code = str(sector) + unit
